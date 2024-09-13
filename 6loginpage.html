@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome Aboard</title>
+  <script src="https://kit.fontawesome.com/e2a5af85b3.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat';
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Navbar button styling */
+    .nav-button {
+      background-color: #000;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background-color: #444444;
+    }
+
+    /* Navbar background color */
+    .navbar-bg {
+      background-color: #f6f7fa;
+    }
+
+    /* Gradient background for footer */
+    .gradient-bottom {
+      background: linear-gradient(to bottom, #ffffff 75%, #f0f0f0 100%);
+    }
+
+    h1 span {
+      color: #3C005A; /* Light purple color */
+    }
+
+    /* Proceed Button Styling */
+    .proceed-btn {
+      background-color: white;
+      color: black;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px; /* Rounded edges */
+      border: 2px solid black; /* Border around the button */
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .proceed-btn:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 0.875rem; /* Smaller text size */
+    }
+  </style>
+</head>
+<body class="bg-white font-sans gradient-bg">
+  <!-- Navbar -->
+  <div class="navbar-bg py-3 shadow-lg">
+    <div class="container mx-auto flex items-center justify-between px-6">
+      <div class="text-3xl text-black font-bold tracking-wide">Skilledity</div>
+      <a href="Login.html">
+        <button class="nav-button">Logout</button>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container mx-auto py-12 flex-grow">
+    <div class="p-8 rounded-lg max-w-4xl mx-auto">
+      <!-- Title Section -->
+      <h1 class="text-4xl font-bold text-center mb-2">
+        Register <span class="text-purple-950">student!</span>
+      </h1>
+      <p class="text-gray-500 text-center mb-8">Select the class & section to proceed</p>
+
+      <!-- Form Section -->
+      <form id="registration-form" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Class Column -->
+        <div>
+          <label for="class" class="block text-sm font-medium text-gray-700">Class</label>
+          <div class="relative mt-1">
+            <select id="class" class="block w-full py-2 pl-3 pr-10 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+              <option value="">Select Class</option>
+              <option value="6">6<sup>th</sup> Class</option>
+              <option value="7">7<sup>th</sup> Class</option>
+              <option value="8">8<sup>th</sup> Class</option>
+              <option value="9">9<sup>th</sup> Class</option>
+              <option value="10">10<sup>th</sup> Class</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Section Column -->
+        <div>
+          <label for="section" class="block text-sm font-medium text-gray-700">Section</label>
+          <div class="relative mt-1">
+            <select id="section" class="block w-full py-2 pl-3 pr-10 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
+              <option value="">Select Section</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+              <option value="F">F</option>
+            </select>
+            <p id="section-error" class="error-message hidden">Please select a section.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Proceed Button at the bottom of the page -->
+  <div class="text-center py-6">
+    <a id="proceed-btn" href="#" class="proceed-btn inline-flex items-center">
+      <span class="mr-2">Proceed</span>
+      <i class="fa-solid fa-chevron-right"></i>
+    </a>
+    <p id="form-error" class="error-message hidden">Please fill in all the options before proceeding.</p>
+  </div>
+
+  <script>
+    document.getElementById('proceed-btn').addEventListener('click', function(event) {
+      event.preventDefault();
+
+      // Get values from inputs
+      const classValue = document.getElementById('class').value;
+      const sectionValue = document.getElementById('section').value;
+      
+      // Check if the section is selected
+      const sectionError = document.getElementById('section-error');
+      if (!sectionValue) {
+        sectionError.classList.remove('hidden');
+        return;
+      } else {
+        sectionError.classList.add('hidden');
+      }
+
+      // Check if all fields are filled
+      const formError = document.getElementById('form-error');
+      if (!classValue || !sectionValue) {
+        formError.classList.remove('hidden');
+        return;
+      } else {
+        formError.classList.add('hidden');
+      }
+
+      // Proceed to the next page
+      window.location.href = '5loginpage.html';
+    });
+  </script>
+</body>
+</html>
+
+
