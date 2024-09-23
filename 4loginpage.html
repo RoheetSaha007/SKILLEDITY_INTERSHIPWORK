@@ -66,6 +66,74 @@
         <div class="container mx-auto flex items-center justify-between px-6">
             <div class="text-3xl text-black font-bold tracking-wide">Skilledity</div>
             <a href="Login.html">
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apply white background color to the entire page */
+        body {
+            background-color: #ffffff; /* Set background to white */
+            font-family: 'Montserrat', sans-serif; /* Ensure Montserrat font is used */
+        }
+
+        /* Navbar button styling */
+        .nav-button {
+            background-color: #000;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #444444;
+        }
+
+        /* Navbar background color and positioning */
+        .navbar-bg {
+            background-color: #f6f7fa; /* Navbar background color */
+            padding: 0.8rem 0;
+            position: fixed; /* Fixed position */
+            top: 0; /* Stick to the top */
+            width: 100%; /* Full width */
+            z-index: 10; /* Ensure it appears on top */
+        }
+
+        /* Adjust content padding to prevent overlap with fixed navbar */
+        .content {
+            padding-top: 2rem; /* Reduced padding to bring content closer to the navbar */
+        }
+
+        /* Card styling */
+        .card {
+            background-color: #ffffff; /* Ensure card background is white */
+            border: 2px solid transparent;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Hover effect for cards */
+        .card:hover {
+            border-color: #cbd5e0; /* Light gray border on hover */
+        }
+    </style>
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen">
+
+    <!-- Navbar -->
+    <div class="navbar-bg py-3 shadow-lg">
+        <div class="container mx-auto flex items-center justify-between px-6">
+            <div class="text-3xl text-black font-bold tracking-wide">Skilledity</div>
+            <a href="Login.html">
                 <button class="nav-button">Logout</button>
             </a>
         </div>
@@ -97,10 +165,11 @@
                 <h2 class="text-2xl font-semibold mb-3">Register Student</h2>
                 <p class="text-gray-600 text-sm mb-5">Click the button below to register the student</p>
                 <div class="flex gap-2 justify-center"> <!-- Decreased the gap between buttons -->
+                    <a href="registerstudent.html">
                     <button class="btn-csv bg-white text-black border shadow-sm py-2 px-6 rounded hover:bg-blue-50 transition duration-200">
                         Upload CSV
-                    </button>
-                    <a href="registerstudent.html">
+                    </button></a>
+                    <a href="6loginpage.html">
                         <button class="btn-manual bg-gray-800 text-white py-2 px-6 rounded hover:bg-gray-900 transition duration-200">
                             Manual
                         </button>
@@ -110,6 +179,10 @@
 
         </div>
     </div>
+
+</body>
+
+</html>
 
 
 
